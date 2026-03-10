@@ -1,0 +1,738 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- ========== HOME / HERO ========== -->
+<section class="hero" id="home">
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-content">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">Tanvir Ahmed <span class="accent">Joy</span></h1>
+        <div class="hero-typing-wrapper">
+            <span class="hero-typing" id="typing-text"></span>
+            <span class="typing-cursor">|</span>
+        </div>
+        <p class="hero-description">
+            Passionate about building intelligent solutions with AI, Machine Learning, and Django.
+            Turning complex problems into elegant, scalable applications.
+        </p>
+        <div class="hero-buttons">
+            <a href="{% url 'main:download_resume' %}" class="btn btn-primary">
+                <i class="fas fa-download"></i> Download Resume
+            </a>
+            <a href="#projects" class="btn btn-outline">
+                <i class="fas fa-rocket"></i> View Projects
+            </a>
+        </div>
+        <div class="hero-social">
+            <a href="https://linkedin.com/tanvir14ahmed" target="_blank" rel="noopener"><i
+                    class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/tanvir14ahmed" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+            <a href="https://codeforces.com/tanvir14ahmed" target="_blank" rel="noopener"><i
+                    class="fas fa-code"></i></a>
+            <a href="https://hackerrank.com/tanvir14ahmed" target="_blank" rel="noopener"><i
+                    class="fab fa-hackerrank"></i></a>
+        </div>
+    </div>
+    <div class="hero-scroll-indicator">
+        <a href="#about">
+            <span class="scroll-text">Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section class="section about" id="about">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">&lt;about&gt;</span>
+            <h2 class="section-title">About <span class="accent">Me</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="about-grid">
+            <div class="about-image reveal reveal-left">
+                <div class="about-img-wrapper about-img-round">
+                    <img src="{% static 'images/profile.jpg' %}" alt="Tanvir Ahmed Joy" class="about-profile-img">
+                    <div class="about-img-border-round"></div>
+                </div>
+                <div class="about-experience-badge">
+                    <span class="exp-number">2+</span>
+                    <span class="exp-text">Years<br>Experience</span>
+                </div>
+            </div>
+            <div class="about-content reveal reveal-right">
+                <h3 class="about-subtitle">AI & ML Developer | Django Specialist</h3>
+                <p class="about-text">
+                    I'm Tanvir Ahmed Joy, a dedicated AI/ML developer and Django specialist from Dhaka, Bangladesh.
+                    I thrive on transforming innovative ideas into robust, production-ready applications.
+                    My journey spans from crafting intelligent machine learning models to architecting
+                    full-stack web solutions that scale.
+                </p>
+                <p class="about-text">
+                    With a strong foundation in computer science and a relentless curiosity for
+                    emerging technologies, I specialize in building data-driven applications that
+                    deliver real business value. Whether it's predictive analytics, natural language
+                    processing, or building dynamic web platforms — I bring precision and creativity
+                    to every project.
+                </p>
+
+                <div class="about-info-grid">
+                    <div class="about-info-item">
+                        <span class="info-label">Name:</span>
+                        <span class="info-value">Tanvir Ahmed Joy</span>
+                    </div>
+                    <div class="about-info-item">
+                        <span class="info-label">Location:</span>
+                        <span class="info-value">Dhaka, Bangladesh</span>
+                    </div>
+                    <div class="about-info-item">
+                        <span class="info-label">Email:</span>
+                        <span class="info-value">tanvir14ahmed@gmail.com</span>
+                    </div>
+                    <div class="about-info-item">
+                        <span class="info-label">Specialization:</span>
+                        <span class="info-value">AI, ML, Django</span>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="education-section">
+                    <h4 class="education-title"><i class="fas fa-graduation-cap"></i> Education</h4>
+                    <div class="education-item">
+                        <div class="edu-dot"></div>
+                        <div class="edu-content">
+                            <h5>M.Sc. in Computer Science & Engineering</h5>
+                            <p class="edu-institution">Jahangirnagar University, Dhaka</p>
+                            <p class="edu-date">2022 - 2023</p>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="edu-dot"></div>
+                        <div class="edu-content">
+                            <h5>B.Sc. in Computer Science & Engineering</h5>
+                            <p class="edu-institution">Dhaka City College, Dhanmondi</p>
+                            <p class="edu-date">2016 - 2020</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements -->
+                <div class="achievements-section">
+                    <h4 class="achievements-title"><i class="fas fa-trophy"></i> Key Achievements</h4>
+                    <div class="achievements-list">
+                        <div class="achievement-item">
+                            <i class="fas fa-medal"></i>
+                            <span>Competitive Programming — BUET, MIST, BUP & OJ's</span>
+                        </div>
+                        <div class="achievement-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>Machine Learning (AI) Specialization — Training from University of Dhaka,
+                                Bangladesh</span>
+                        </div>
+                        <div class="achievement-item">
+                            <i class="fas fa-star"></i>
+                            <span>Open Source Contributor — Multiple GitHub Projects</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== SKILLS ========== -->
+<section class="section skills" id="skills">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">&lt;skills&gt;</span>
+            <h2 class="section-title">My <span class="accent">Skills</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="skills-grid">
+            {% for category, skill_list in skills_by_category.items %}
+            <div class="skill-category reveal">
+                <div class="skill-category-header">
+                    <div class="skill-category-icon">
+                        {% if 'Programming' in category %}
+                        <i class="fas fa-laptop-code"></i>
+                        {% elif 'Web' in category %}
+                        <i class="fas fa-globe"></i>
+                        {% elif 'AI' in category or 'Machine' in category %}
+                        <i class="fas fa-brain"></i>
+                        {% elif 'Database' in category %}
+                        <i class="fas fa-database"></i>
+                        {% else %}
+                        <i class="fas fa-users"></i>
+                        {% endif %}
+                    </div>
+                    <h3 class="skill-category-title">{{ category }}</h3>
+                </div>
+                <div class="skill-bars">
+                    {% for skill in skill_list %}
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">{{ skill.name }}</span>
+                            <span class="skill-percent">{{ skill.proficiency }}%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="{{ skill.proficiency }}"></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% empty %}
+            <!-- Default skills when no data in DB -->
+            <div class="skill-category reveal">
+                <div class="skill-category-header">
+                    <div class="skill-category-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3 class="skill-category-title">Programming Languages</h3>
+                </div>
+                <div class="skill-bars">
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Python</span><span
+                                class="skill-percent">90%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">JavaScript</span><span
+                                class="skill-percent">75%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">C/C++</span><span
+                                class="skill-percent">80%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">SQL</span><span
+                                class="skill-percent">85%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="85"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category reveal">
+                <div class="skill-category-header">
+                    <div class="skill-category-icon"><i class="fas fa-globe"></i></div>
+                    <h3 class="skill-category-title">Web Development</h3>
+                </div>
+                <div class="skill-bars">
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Django</span><span
+                                class="skill-percent">90%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">n8n (AI Automation)</span><span
+                                class="skill-percent">85%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">HTML/CSS</span><span
+                                class="skill-percent">85%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">REST APIs</span><span
+                                class="skill-percent">80%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">PostgreSQL</span><span
+                                class="skill-percent">80%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">FAST API</span><span
+                                class="skill-percent">90%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="90"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category reveal">
+                <div class="skill-category-header">
+                    <div class="skill-category-icon"><i class="fas fa-brain"></i></div>
+                    <h3 class="skill-category-title">AI / Machine Learning</h3>
+                </div>
+                <div class="skill-bars">
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">TensorFlow / Keras</span><span
+                                class="skill-percent">80%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Scikit-learn</span><span
+                                class="skill-percent">85%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">NLP / LLMs</span><span
+                                class="skill-percent">70%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Data Analysis (Pandas, NumPy)</span><span
+                                class="skill-percent">85%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="85"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category reveal">
+                <div class="skill-category-header">
+                    <div class="skill-category-icon"><i class="fas fa-users"></i></div>
+                    <h3 class="skill-category-title">Soft Skills</h3>
+                </div>
+                <div class="skill-bars">
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Problem Solving</span><span
+                                class="skill-percent">90%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Team Collaboration</span><span
+                                class="skill-percent">85%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Communication</span><span
+                                class="skill-percent">80%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Continuous Learning</span><span
+                                class="skill-percent">95%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="95"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ========== PROJECTS ========== -->
+<section class="section projects" id="projects">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">&lt;projects&gt;</span>
+            <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="projects-grid">
+            {% for project in projects %}
+            <div class="project-card reveal">
+                <div class="project-thumbnail">
+                    {% if project.thumbnail %}
+                    <img src="{{ project.thumbnail.url }}" alt="{{ project.title }}">
+                    {% else %}
+                    <div class="project-placeholder">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    {% endif %}
+                    <div class="project-overlay">
+                        <div class="project-overlay-links">
+                            {% if project.live_url %}
+                            <a href="{{ project.live_url }}" target="_blank" class="project-link" title="Live Demo"><i
+                                    class="fas fa-external-link-alt"></i></a>
+                            {% endif %}
+                            {% if project.github_url %}
+                            <a href="{{ project.github_url }}" target="_blank" class="project-link" title="GitHub"><i
+                                    class="fab fa-github"></i></a>
+                            {% endif %}
+                            <button class="project-link project-modal-btn" data-title="{{ project.title }}"
+                                data-description="{{ project.description }}"
+                                data-technologies="{{ project.technologies }}" data-live="{{ project.live_url }}"
+                                data-github="{{ project.github_url }}" title="Details">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    <p class="project-short-desc">{{ project.short_description }}</p>
+                    <div class="project-tech-tags">
+                        {% for tech in project.tech_list %}
+                        <span class="tech-tag">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <!-- Default project cards when no data in DB -->
+            <div class="project-card reveal">
+                <div class="project-thumbnail">
+                    <div class="project-placeholder"><i class="fas fa-brain"></i></div>
+                    <div class="project-overlay">
+                        <div class="project-overlay-links">
+                            <a href="#" class="project-link" title="Live Demo"><i
+                                    class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">AI Content Classifier</h3>
+                    <p class="project-short-desc">An ML-powered content classification system using NLP techniques and
+                        deep learning.</p>
+                    <div class="project-tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">NLP</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-thumbnail">
+                    <div class="project-placeholder"><i class="fas fa-shopping-cart"></i></div>
+                    <div class="project-overlay">
+                        <div class="project-overlay-links">
+                            <a href="#" class="project-link" title="Live Demo"><i
+                                    class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">E-Commerce Platform</h3>
+                    <p class="project-short-desc">Full-stack e-commerce solution built with Django, featuring payment
+                        integration and inventory management.</p>
+                    <div class="project-tech-tags">
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-thumbnail">
+                    <div class="project-placeholder"><i class="fas fa-chart-line"></i></div>
+                    <div class="project-overlay">
+                        <div class="project-overlay-links">
+                            <a href="#" class="project-link" title="Live Demo"><i
+                                    class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Stock Prediction Dashboard</h3>
+                    <p class="project-short-desc">Real-time stock market prediction dashboard using LSTM neural networks
+                        and live data feeds.</p>
+                    <div class="project-tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Keras</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">Chart.js</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-thumbnail">
+                    <div class="project-placeholder"><i class="fas fa-comments"></i></div>
+                    <div class="project-overlay">
+                        <div class="project-overlay-links">
+                            <a href="#" class="project-link" title="Live Demo"><i
+                                    class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">AI Chatbot Platform</h3>
+                    <p class="project-short-desc">Intelligent chatbot with context-aware responses using transformer
+                        models and Django REST framework.</p>
+                    <div class="project-tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Transformers</span>
+                        <span class="tech-tag">DRF</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="section testimonials" id="testimonials">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">&lt;testimonials&gt;</span>
+            <h2 class="section-title">What People <span class="accent">Say</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="testimonials-slider reveal">
+            {% for testimonial in testimonials %}
+            <div class="testimonial-card {% if forloop.first %}active{% endif %}" data-index="{{ forloop.counter0 }}">
+                <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                <p class="testimonial-text">{{ testimonial.content }}</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">
+                        {% if testimonial.photo %}
+                        <img src="{{ testimonial.photo.url }}" alt="{{ testimonial.name }}">
+                        {% else %}
+                        <i class="fas fa-user"></i>
+                        {% endif %}
+                    </div>
+                    <div class="testimonial-info">
+                        <h4>{{ testimonial.name }}</h4>
+                        <p>{{ testimonial.role }}</p>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="testimonial-card active" data-index="0">
+                <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                <p class="testimonial-text">"Tanvir is an exceptionally talented developer with a keen eye for detail.
+                    His work on our AI-driven analytics platform exceeded all expectations."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+                    <div class="testimonial-info">
+                        <h4>Abu Sayed Md. Mostafizur Rahaman, PhD</h4>
+                        <p>Professor, Department of Computer Science and Engineering, Jahangirnagar University</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card" data-index="1">
+                <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                <p class="testimonial-text">"Working with Tanvir was a pleasure. He brought innovative solutions to
+                    complex problems and consistently delivered high-quality work."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+                    <div class="testimonial-info">
+                        <h4>Sarah Ahmed</h4>
+                        <p>Senior Developer, Softvence Omega</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card" data-index="2">
+                <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                <p class="testimonial-text">"His Django expertise and AI knowledge make him a unique developer who can
+                    bridge the gap between data science and web development seamlessly."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+                    <div class="testimonial-info">
+                        <h4>Karim Hassan</h4>
+                        <p>Project Manager, Ipsita Computers Pte Ltd</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="testimonial-dots" id="testimonial-dots"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== BLOG PREVIEW ========== -->
+<section class="section blog-preview" id="blog">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">&lt;blog&gt;</span>
+            <h2 class="section-title">Latest <span class="accent">Posts</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="blog-grid">
+            {% for post in blog_posts %}
+            <article class="blog-card reveal">
+                <div class="blog-card-image">
+                    {% if post.cover_image %}
+                    <img src="{{ post.cover_image.url }}" alt="{{ post.title }}">
+                    {% else %}
+                    <div class="blog-placeholder"><i class="fas fa-pen-fancy"></i></div>
+                    {% endif %}
+                    <div class="blog-card-date">
+                        <span class="blog-day">{{ post.created_at|date:"d" }}</span>
+                        <span class="blog-month">{{ post.created_at|date:"M" }}</span>
+                    </div>
+                </div>
+                <div class="blog-card-content">
+                    <h3><a href="{% url 'main:blog_detail' post.slug %}">{{ post.title }}</a></h3>
+                    <p>{{ post.excerpt|truncatewords:25 }}</p>
+                    <a href="{% url 'main:blog_detail' post.slug %}" class="blog-read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+            {% empty %}
+            <article class="blog-card reveal">
+                <div class="blog-card-image">
+                    <div class="blog-placeholder"><i class="fas fa-robot"></i></div>
+                    <div class="blog-card-date"><span class="blog-day">10</span><span class="blog-month">Mar</span>
+                    </div>
+                </div>
+                <div class="blog-card-content">
+                    <h3><a href="#">Getting Started with Machine Learning in 2026</a></h3>
+                    <p>A comprehensive guide to beginning your journey in machine learning with practical examples and
+                        resources...</p>
+                    <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+            <article class="blog-card reveal">
+                <div class="blog-card-image">
+                    <div class="blog-placeholder"><i class="fas fa-server"></i></div>
+                    <div class="blog-card-date"><span class="blog-day">05</span><span class="blog-month">Mar</span>
+                    </div>
+                </div>
+                <div class="blog-card-content">
+                    <h3><a href="#">Building Scalable Django Applications</a></h3>
+                    <p>Best practices and patterns for building Django applications that can handle millions of users...
+                    </p>
+                    <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+            <article class="blog-card reveal">
+                <div class="blog-card-image">
+                    <div class="blog-placeholder"><i class="fas fa-database"></i></div>
+                    <div class="blog-card-date"><span class="blog-day">28</span><span class="blog-month">Feb</span>
+                    </div>
+                </div>
+                <div class="blog-card-content">
+                    <h3><a href="#">PostgreSQL Tips for Django Developers</a></h3>
+                    <p>Advanced PostgreSQL techniques every Django developer should know for optimal database
+                        performance...</p>
+                    <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        <div class="blog-cta reveal">
+            <a href="{% url 'main:blog_list' %}" class="btn btn-outline">
+                <i class="fas fa-blog"></i> View All Posts
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="section contact" id="contact">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">&lt;contact&gt;</span>
+            <h2 class="section-title">Get In <span class="accent">Touch</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info-side reveal reveal-left">
+                <h3>Let's Talk</h3>
+                <p>I'm always interested in hearing about new opportunities, projects, and collaborations. Feel free to
+                    reach out!</p>
+
+                <div class="contact-details">
+                    <div class="contact-detail-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:tanvir14ahmed@gmail.com">tanvir14ahmed@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-detail-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:++8801823555505">+880 1823-555505</a>
+                        </div>
+                    </div>
+                    <div class="contact-detail-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Dhaka, Bangladesh</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-social">
+                    <h4>Find Me On</h4>
+                    <div class="social-icons">
+                        <a href="https://linkedin.com/tanvir14ahmed" target="_blank" rel="noopener"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/tanvir14ahmed" target="_blank" rel="noopener"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://codeforces.com/profile/tanvir14ahmed" target="_blank" rel="noopener"><i
+                                class="fas fa-code"></i></a>
+                        <a href="https://hackerrank.com/tanvir14ahmed" target="_blank" rel="noopener"><i
+                                class="fab fa-hackerrank"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-side reveal reveal-right">
+                <form id="contact-form" method="POST" action="{% url 'main:contact_submit' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" name="name" id="contact-name" placeholder="Your Name" required>
+                        <label for="contact-name">Your Name</label>
+                        <span class="form-error" id="name-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" id="contact-email" placeholder="Your Email" required>
+                        <label for="contact-email">Your Email</label>
+                        <span class="form-error" id="email-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" id="contact-message" placeholder="Your Message" rows="5"
+                            required></textarea>
+                        <label for="contact-message">Your Message</label>
+                        <span class="form-error" id="message-error"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit" id="contact-submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loading"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <div class="form-status" id="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== PROJECT MODAL ========== -->
+<div class="modal-overlay" id="project-modal">
+    <div class="modal-content">
+        <button class="modal-close" id="modal-close"><i class="fas fa-times"></i></button>
+        <h2 class="modal-title" id="modal-title"></h2>
+        <p class="modal-description" id="modal-description"></p>
+        <div class="modal-tech" id="modal-tech"></div>
+        <div class="modal-links" id="modal-links"></div>
+    </div>
+</div>
+{% endblock %}

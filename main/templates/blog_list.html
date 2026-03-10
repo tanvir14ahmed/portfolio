@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog - Tanvir Ahmed Joy{% endblock %}
+
+{% block content %}
+<section class="section blog-page" id="blog-page">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">&lt;blog&gt;</span>
+            <h2 class="section-title">All <span class="accent">Posts</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="blog-grid">
+            {% for post in posts %}
+            <article class="blog-card">
+                <div class="blog-card-image">
+                    {% if post.cover_image %}
+                    <img src="{{ post.cover_image.url }}" alt="{{ post.title }}">
+                    {% else %}
+                    <div class="blog-placeholder"><i class="fas fa-pen-fancy"></i></div>
+                    {% endif %}
+                    <div class="blog-card-date">
+                        <span class="blog-day">{{ post.created_at|date:"d" }}</span>
+                        <span class="blog-month">{{ post.created_at|date:"M" }}</span>
+                    </div>
+                </div>
+                <div class="blog-card-content">
+                    <h3><a href="{% url 'main:blog_detail' post.slug %}">{{ post.title }}</a></h3>
+                    <p>{{ post.excerpt|truncatewords:25 }}</p>
+                    <a href="{% url 'main:blog_detail' post.slug %}" class="blog-read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+            {% empty %}
+            <div class="empty-state">
+                <i class="fas fa-blog"></i>
+                <h3>No posts yet</h3>
+                <p>Stay tuned for upcoming articles!</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
