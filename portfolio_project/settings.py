@@ -11,7 +11,7 @@ SECRET_KEY = 'django-insecure-yz78r7qkl)fc%qma(ry=rt6ldrfv97auzi^7j=bl7cg%@3yl01
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['tanvir.codelab-by-tnv.top', 'www.tanvir.codelab-by-tnv.top', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
