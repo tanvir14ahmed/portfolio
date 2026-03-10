@@ -2,7 +2,7 @@ import os
 import django
 
 # Set the environment to your project settings
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'portfolio_repo.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'portfolio_project.settings')
 django.setup()
 
 from django.contrib.auth import get_user_model
