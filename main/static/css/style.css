@@ -371,7 +371,7 @@ img {
     letter-spacing: 3px;
     text-transform: uppercase;
     opacity: 0;
-    animation: fadeInUp 0.8s ease 0.2s forwards;
+    animation: fadeInUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s forwards;
 }
 
 .hero-name {
@@ -380,7 +380,7 @@ img {
     line-height: 1.1;
     margin-bottom: 16px;
     opacity: 0;
-    animation: fadeInUp 0.8s ease 0.4s forwards;
+    animation: fadeInUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) 0.4s forwards;
 }
 
 .hero-typing-wrapper {
@@ -390,7 +390,7 @@ img {
     min-height: 2em;
     font-family: var(--font-mono);
     opacity: 0;
-    animation: fadeInUp 0.8s ease 0.6s forwards;
+    animation: fadeInUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) 0.6s forwards;
 }
 
 .typing-cursor {
@@ -419,7 +419,7 @@ img {
     margin: 0 auto 32px;
     line-height: 1.8;
     opacity: 0;
-    animation: fadeInUp 0.8s ease 0.8s forwards;
+    animation: fadeInUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) 0.8s forwards;
 }
 
 .hero-buttons {
@@ -429,7 +429,7 @@ img {
     flex-wrap: wrap;
     margin-bottom: 40px;
     opacity: 0;
-    animation: fadeInUp 0.8s ease 1s forwards;
+    animation: fadeInUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) 1s forwards;
 }
 
 .hero-social {
@@ -437,7 +437,7 @@ img {
     gap: 16px;
     justify-content: center;
     opacity: 0;
-    animation: fadeInUp 0.8s ease 1.2s forwards;
+    animation: fadeInUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) 1.2s forwards;
 }
 
 .hero-social a {
@@ -499,12 +499,14 @@ img {
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(40px) scale(0.98);
+        filter: blur(15px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
+        filter: blur(0);
     }
 }
 
@@ -549,29 +551,35 @@ img {
 /* ---------- SCROLL REVEAL ---------- */
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(60px) scale(0.96);
+    filter: blur(15px);
+    transition:
+        opacity 1.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        transform 1.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        filter 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    will-change: transform, opacity, filter;
 }
 
 .reveal.revealed {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+    filter: blur(0);
 }
 
 .reveal-left {
-    transform: translateX(-40px) translateY(0);
+    transform: translateX(-60px) translateY(0) scale(0.96);
 }
 
 .reveal-left.revealed {
-    transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0) scale(1);
 }
 
 .reveal-right {
-    transform: translateX(40px) translateY(0);
+    transform: translateX(60px) translateY(0) scale(0.96);
 }
 
 .reveal-right.revealed {
-    transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0) scale(1);
 }
 
 /* ---------- ABOUT SECTION ---------- */

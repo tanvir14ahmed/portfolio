@@ -41,23 +41,15 @@ def contact_submit(request):
 
 
 def download_resume(request):
-    if not HAS_XHTML2PDF:
-        return HttpResponse("PDF generation not available.", status=500)
-
-    template = get_template('resume_template.html')
-    context = {
-        'skills': Skill.objects.all(),
-        'projects': Project.objects.filter(featured=True),
-    }
-    html = template.render(context)
-
-    response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="Tanvir_Ahmed_Joy_Resume.pdf"'
-
-    pisa_status = pisa.CreatePDF(html, dest=response)
-    if pisa_status.err:
-        return HttpResponse('Error generating PDF', status=500)
-    return response
+    import os
+    from django.conf import settings
+    file_path = os.path.join(settings.BASE_DIR, 'main', 'static', 'files', 'resume.pdf')
+    if os.path.exists(file_path):
+        with open(file_path, 'rb') as fh:
+            response = HttpResponse(fh.read(), content_type="application/pdf")
+            response['Content-Disposition'] = 'inline; filename=' + os.path.basename(file_path)
+            return response
+    return HttpResponse("Resume not found.", status=404)
 
 
 def blog_list(request):
