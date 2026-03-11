@@ -45,10 +45,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portfolio_project.wsgi.application'
 
+# Database folder for CPanel SQLite stability
+DB_DIR = BASE_DIR / 'db'
+if not DB_DIR.exists():
+    try:
+        os.makedirs(DB_DIR, exist_ok=True)
+    except:
+        pass
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': DB_DIR / 'db.sqlite3',
     }
 }
 
