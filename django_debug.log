@@ -3819,3 +3819,4 @@ INFO 2026-03-11 06:29:53,390 autoreload F:\TNV\portfolio\main\views.py changed, 
 INFO 2026-03-11 06:29:53,393 autoreload F:\TNV\portfolio\main\views.py changed, reloading.
 INFO 2026-03-11 06:29:53,737 autoreload Watching for file changes with StatReloader
 INFO 2026-03-11 06:29:53,739 autoreload Watching for file changes with StatReloader
+INFO 2026-03-11 06:36:55,384 autoreload F:\TNV\portfolio\portfolio_project\settings.py changed, reloading.
