@@ -51,4 +51,28 @@ def blog_detail(request, slug):
     return render(request, 'blog_detail.html', {'post': post})
 
 def test_view(request):
-    return HttpResponse("<h1>Portfolio Server is Running!</h1>")
+    import os
+    from django.db import connection
+    from django.conf import settings
+    
+    db_status = "Unknown"
+    try:
+        connection.ensure_connection()
+        db_status = "✅ Connected to Database!"
+    except Exception as e:
+        db_status = f"❌ DB ERROR: {str(e)}"
+    
+    db_file = settings.DATABASES['default']['NAME']
+    db_exists = "✅ Exists" if os.path.exists(db_file) else "❌ MISSING"
+    
+    html = f"""
+    <h1>Diagnostic Page</h1>
+    <ul>
+        <li><b>Server Status:</b> Running!</li>
+        <li><b>Database Path:</b> {db_file}</li>
+        <li><b>Database File:</b> {db_exists}</li>
+        <li><b>Database Connection:</b> {db_status}</li>
+    </ul>
+    <p>Check <b>django_debug.log</b> in File Manager for details.</p>
+    """
+    return HttpResponse(html)
