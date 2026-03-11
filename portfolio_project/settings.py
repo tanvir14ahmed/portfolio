@@ -94,15 +94,15 @@ WSGI_APPLICATION = 'portfolio_project.wsgi.application'
 # Database folder for CPanel SQLite stability
 DB_DIR = BASE_DIR / 'db'
 if not DB_DIR.exists():
-    try:
-        os.makedirs(DB_DIR, exist_ok=True)
-    except:
-        pass
+    # If the folder doesn't exist yet, fallback to root BASE_DIR
+    DB_PATH = BASE_DIR / 'db.sqlite3'
+else:
+    DB_PATH = DB_DIR / 'db.sqlite3'
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': DB_DIR / 'db.sqlite3',
+        'NAME': DB_PATH,
     }
 }
 
