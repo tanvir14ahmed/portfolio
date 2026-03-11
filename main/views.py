@@ -49,3 +49,6 @@ def blog_list(request):
 def blog_detail(request, slug):
     post = get_object_or_404(BlogPost, slug=slug, published=True)
     return render(request, 'blog_detail.html', {'post': post})
+
+def test_view(request):
+    return HttpResponse("<h1>Portfolio Server is Running!</h1>")

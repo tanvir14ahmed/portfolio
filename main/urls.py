@@ -9,4 +9,5 @@ urlpatterns = [
     path('download-resume/', views.download_resume, name='download_resume'),
     path('blog/', views.blog_list, name='blog_list'),
     path('blog/<slug:slug>/', views.blog_detail, name='blog_detail'),
+    path('test-view/', views.test_view, name='test_view'),
 ]
