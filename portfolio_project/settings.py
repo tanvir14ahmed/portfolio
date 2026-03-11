@@ -24,7 +24,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': str(BASE_DIR / 'server_error.log'),
+            'filename': str(BASE_DIR / 'CPANEL_TRACE.txt'),
             'formatter': 'verbose',
         },
     },

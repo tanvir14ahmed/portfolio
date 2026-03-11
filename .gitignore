@@ -1,34 +1,21 @@
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
-*.egg-info/
-dist/
-build/
-*.egg
-
-# Virtual environment
-.venv/
-venv/
-env/
-
 # Django
+*.log
+*.pot
+*.py[co]
+__pycache__/
+local_settings.py
 db.sqlite3
 db.sqlite3-journal
-/staticfiles/
-/media/
+media/
+staticfiles/
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# Secrets
-*.env
-.env
+# CPanel specific
+passenger_wsgi.py
+.venv/
+env/
+venv/
+venv.bak/
+/db/
+CPANEL_TRACE.txt
+server_error.log
+django_debug.log
