@@ -1,18 +1,23 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tanvir Ahmed Joy - AI, ML, Django Developer. Building intelligent solutions with Python, Django, and Machine Learning.">
-    <meta name="keywords" content="Tanvir Ahmed Joy, Django Developer, AI Developer, Machine Learning, Python, Portfolio">
+    <meta name="description"
+        content="Tanvir Ahmed Joy - AI, ML, Django Developer. Building intelligent solutions with Python, Django, and Machine Learning.">
+    <meta name="keywords"
+        content="Tanvir Ahmed Joy, Django Developer, AI Developer, Machine Learning, Python, Portfolio">
     <meta name="author" content="Tanvir Ahmed Joy">
     <title>{% block title %}Tanvir Ahmed Joy - AI, ML, Django Developer{% endblock %}</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -21,6 +26,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% block extra_css %}{% endblock %}
 </head>
+
 <body>
     <!-- ========== NAVBAR ========== -->
     <nav class="navbar" id="navbar">
@@ -31,13 +37,13 @@
                 <span class="logo-bracket">/&gt;</span>
             </a>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-                <li><a href="#blog" class="nav-link">Blog</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="{% url 'main:index' %}#home" class="nav-link active">Home</a></li>
+                <li><a href="{% url 'main:index' %}#about" class="nav-link">About</a></li>
+                <li><a href="{% url 'main:index' %}#skills" class="nav-link">Skills</a></li>
+                <li><a href="{% url 'main:index' %}#projects" class="nav-link">Projects</a></li>
+                <li><a href="{% url 'main:index' %}#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="{% url 'main:index' %}#blog" class="nav-link">Blog</a></li>
+                <li><a href="{% url 'main:index' %}#contact" class="nav-link">Contact</a></li>
             </ul>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
                 <span class="hamburger"></span>
@@ -65,17 +71,18 @@
                 <div class="footer-links-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="{% url 'main:index' %}#home">Home</a></li>
+                        <li><a href="{% url 'main:index' %}#about">About</a></li>
+                        <li><a href="{% url 'main:index' %}#skills">Skills</a></li>
+                        <li><a href="{% url 'main:index' %}#projects">Projects</a></li>
+                        <li><a href="{% url 'main:index' %}#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact-info">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="mailto:tanvir14ahmed@gmail.com"><i class="fas fa-envelope"></i> tanvir14ahmed@gmail.com</a></li>
+                        <li><a href="mailto:tanvir14ahmed@gmail.com"><i class="fas fa-envelope"></i>
+                                tanvir14ahmed@gmail.com</a></li>
                         <li><a href="tel:+8801823555505"><i class="fas fa-phone"></i> +880 1823-555505</a></li>
                         <li><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</li>
                     </ul>
@@ -83,10 +90,14 @@
                 <div class="footer-social">
                     <h4>Follow Me</h4>
                     <div class="social-icons">
-                        <a href="https://linkedin.com/in/tanvir14ahmed" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/tanvir14ahmed" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://codeforces.com/tanvir14ahmed" target="_blank" rel="noopener" aria-label="Codeforces"><i class="fas fa-code"></i></a>
-                        <a href="https://hackerrank.com/" target="_blank" rel="noopener" aria-label="HackerRank"><i class="fab fa-hackerrank"></i></a>
+                        <a href="https://linkedin.com/in/tanvir14ahmed" target="_blank" rel="noopener"
+                            aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/tanvir14ahmed" target="_blank" rel="noopener" aria-label="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://codeforces.com/tanvir14ahmed" target="_blank" rel="noopener"
+                            aria-label="Codeforces"><i class="fas fa-code"></i></a>
+                        <a href="https://hackerrank.com/" target="_blank" rel="noopener" aria-label="HackerRank"><i
+                                class="fab fa-hackerrank"></i></a>
                     </div>
                 </div>
             </div>
@@ -101,4 +112,5 @@
     <script src="{% static 'js/main.js' %}"></script>
     {% block extra_js %}{% endblock %}
 </body>
+
 </html>
