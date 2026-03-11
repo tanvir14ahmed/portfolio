@@ -9,15 +9,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-yz78r7qkl)fc%qma(ry=rt6ldrfv97auzi^7j=bl7cg%@3yl01'
 
-ALLOWED_HOSTS = ['*']  # Temporarily allow all for debugging, or add your specific IPs
+DEBUG = True
 
-# WhiteNoise storage to handle compressed static files
+ALLOWED_HOSTS = ['*']
+
+# Simple WhiteNoise storage
 STORAGES = {
     "default": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     },
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
     },
 }
 

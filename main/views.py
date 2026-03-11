@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.http import require_POST
 from django.template.loader import get_template
+from django.core.management import call_command
+import io
 from .models import Skill, Project, Testimonial, BlogPost, ContactMessage
 from .forms import ContactForm
 
@@ -60,3 +62,30 @@ def blog_list(request):
 def blog_detail(request, slug):
     post = get_object_or_404(BlogPost, slug=slug, published=True)
     return render(request, 'blog_detail.html', {'post': post})
+
+def deploy_setup(request):
+    """
+    A view to run migrations and collectstatic without terminal access.
+    URL: /deploy-setup/?key=tanvir_secure_setup
+    """
+    if request.GET.get('key') != 'tanvir_secure_setup':
+        return HttpResponse("Unauthorized", status=403)
+
+    out = io.StringIO()
+    results = []
+    
+    try:
+        # 1. Migrate
+        call_command('migrate', no_input=True, stdout=out)
+        results.append("✅ Migration: SUCCESS")
+        
+        # 2. Collectstatic
+        call_command('collectstatic', no_input=True, interactive=False, clear=True, stdout=out)
+        results.append("✅ Collectstatic: SUCCESS")
+        
+        # 3. List the logs
+        log_output = out.getvalue()
+        
+        return HttpResponse(f"<h1>Deployment Setup Results</h1><pre>{'<br>'.join(results)}</pre><h2>Logs:</h2><pre>{log_output}</pre>")
+    except Exception as e:
+        return HttpResponse(f"<h1>Setup Failed</h1><pre>{str(e)}</pre>")
