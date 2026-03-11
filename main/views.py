@@ -71,21 +71,49 @@ def deploy_setup(request):
     if request.GET.get('key') != 'tanvir_secure_setup':
         return HttpResponse("Unauthorized", status=403)
 
+    import os
+    import io
+    from django.core.management import call_command
+    from django.conf import settings
+    
     out = io.StringIO()
     results = []
     
     try:
-        # 1. Migrate
+        # 1. Fix Permissions on DB and folder
+        db_path = settings.DATABASES['default']['NAME']
+        db_dir = os.path.dirname(db_path)
+        
+        try:
+            os.chmod(db_dir, 0o775)
+            results.append(f"✅ Directory permissions set to 775: {db_dir}")
+            if os.path.exists(db_path):
+                os.chmod(db_path, 0o666)
+                results.append(f"✅ Database permissions set to 666: {db_path}")
+        except Exception as perm_err:
+            results.append(f"⚠️ Permission fix warning: {perm_err}")
+
+        # 2. Migrate
         call_command('migrate', no_input=True, stdout=out)
         results.append("✅ Migration: SUCCESS")
         
-        # 2. Collectstatic
+        # 3. Collectstatic
         call_command('collectstatic', no_input=True, interactive=False, clear=True, stdout=out)
         results.append("✅ Collectstatic: SUCCESS")
         
-        # 3. List the logs
+        # 4. Show results
         log_output = out.getvalue()
         
-        return HttpResponse(f"<h1>Deployment Setup Results</h1><pre>{'<br>'.join(results)}</pre><h2>Logs:</h2><pre>{log_output}</pre>")
+        return HttpResponse(f"""
+            <html><body style='font-family: monospace; background: #1a1a1a; color: #00ff00; padding: 20px;'>
+            <h1>Deployment Setup Results</h1>
+            <ul style='list-style: none; padding: 0;'>{''.join([f'<li>{r}</li>' for r in results])}</ul>
+            <hr>
+            <h2>Full Logs:</h2>
+            <pre style='background: #000; padding: 15px; border-radius: 5px;'>{log_output}</pre>
+            <p><a href='/' style='color: cyan;'>Go to Home</a> | <a href='/admin/' style='color: cyan;'>Go to Admin</a></p>
+            </body></html>
+        """)
     except Exception as e:
-        return HttpResponse(f"<h1>Setup Failed</h1><pre>{str(e)}</pre>")
+        import traceback
+        return HttpResponse(f"<h1>Setup Failed</h1><pre>{traceback.format_exc()}</pre>")
